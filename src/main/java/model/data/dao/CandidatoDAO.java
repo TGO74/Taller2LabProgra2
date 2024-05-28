@@ -98,4 +98,17 @@ public class CandidatoDAO {
         }
         return candidatos;
     }
+
+    public List<Candidato> buscarCandidatosPorNombre(String valor) {
+
+        // logica
+
+        return null;
+
+    }
+
+    public List<Candidato> buscarCandidatosPorPartido(String valor) {
+
+        return null;
+    }
 }

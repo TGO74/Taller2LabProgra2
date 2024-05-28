@@ -26,4 +26,16 @@ public class CandidatoController {
     public List<Candidato> listarCandidatos() {
         return candidatoDAO.listarCandidatos();
     }
+
+    public List<Candidato> buscarCandidatosPorNombre(String valor) {
+
+        return candidatoDAO.buscarCandidatosPorNombre(valor);
+
+    }
+
+    public List<Candidato> buscarCandidatosPorPartido(String valor) {
+
+        return candidatoDAO.buscarCandidatosPorPartido(valor);
+
+    }
 }

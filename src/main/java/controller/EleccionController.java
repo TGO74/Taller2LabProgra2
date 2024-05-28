@@ -32,5 +32,15 @@ public class EleccionController {
     public List<Eleccion> listarElecciones() {
         return eleccionDAO.listarElecciones();
     }
+
+    public boolean registrarEleccion(Eleccion eleccion) {
+
+        return eleccionDAO.registrarEleccion(eleccion);
+    }
+
+    public Eleccion buscarEleccionPorId(int id) {
+
+        return eleccionDAO.buscarEleccionPorId(id);
+    }
 }
 
