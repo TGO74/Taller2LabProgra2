@@ -98,7 +98,14 @@ public class VentanaMenu extends JFrame {
         btnBuscarCandidato.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                VentanaBuscarCandidato ventanaBuscarCandidato = new VentanaBuscarCandidato();
+                VentanaBuscarCandidato ventanaBuscarCandidato = null;
+                try {
+                    ventanaBuscarCandidato = new VentanaBuscarCandidato();
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                } catch (ClassNotFoundException ex) {
+                    throw new RuntimeException(ex);
+                }
                 ventanaBuscarCandidato.setVisible(true);
             }
         });

@@ -115,5 +115,6 @@ public class CandidatoDAO {
     public List<Candidato> listarCandidatos() {
 
 
+        return null;
     }
 }

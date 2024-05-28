@@ -5,6 +5,7 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.util.List;
 import controller.CandidatoController;
 import model.Candidato;
@@ -18,8 +19,14 @@ public class VentanaBuscarCandidato extends JFrame {
     private DefaultTableModel tableModel;
     private CandidatoController candidatoController;
 
-    public VentanaBuscarCandidato() {
-        candidatoController = new CandidatoController();
+    public VentanaBuscarCandidato() throws SQLException, ClassNotFoundException {
+        try {
+            candidatoController = new CandidatoController();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
 
         setTitle("Buscar Candidato");
         setSize(600, 400);
@@ -90,7 +97,13 @@ public class VentanaBuscarCandidato extends JFrame {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new VentanaBuscarCandidato().setVisible(true);
+                try {
+                    new VentanaBuscarCandidato().setVisible(true);
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                } catch (ClassNotFoundException e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
     }

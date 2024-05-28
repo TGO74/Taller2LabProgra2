@@ -21,7 +21,7 @@ public class EleccionDAO {
             pstmt.setString(1, eleccion.getNombreEleccion());
             pstmt.setDate(2, new Date(eleccion.getFechaEleccion().getTime()));
             pstmt.setString(3, eleccion.getLugarEleccion());
-            pstmt.setString(4, eleccion.getCargoElegido());
+            pstmt.setString(4, String.valueOf(eleccion.getCargoElegido()));
             pstmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
