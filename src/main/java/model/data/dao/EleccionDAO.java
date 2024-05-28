@@ -85,7 +85,7 @@ public class EleccionDAO {
         return elecciones;
     }
 
-    public List<Eleccion> listarElecciones() {
+    public List<Eleccion> registrarElecciones() {
         List<Eleccion> elecciones = new ArrayList<>();
         String sql = "SELECT * FROM Eleccion";
 
@@ -106,5 +106,13 @@ public class EleccionDAO {
             e.printStackTrace();
         }
         return elecciones;
+    }
+
+
+    public Eleccion buscarEleccionPorId(int id) {
+
+        return null;
+
+
     }
 }

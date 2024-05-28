@@ -14,6 +14,26 @@ public class CandidatoDAO {
         this.connection = DBConnector.getInstance().getConnection("elecciones", "root", "root");
     }
 
+    public static String[][] obtener(String text) {
+
+        String[][] datos = new String[100][3];
+        int i = 0;
+        try {
+            Connection connection = DBConnector.getInstance().getConnection("elecciones", "root", "root");
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM Candidato WHERE nombreCandidato LIKE '%" + text + "%'");
+            while (resultSet.next()) {
+                datos[i][0] = resultSet.getString("nombreCandidato");
+                datos[i][1] = resultSet.getString("partidoPolitico");
+                datos[i][2] = resultSet.getString("cargoPostula");
+                i++;
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return datos;
+    }
+
     public void agregarCandidato(Candidato candidato) {
         String sql = "INSERT INTO Candidato (nombreCandidato, partidoPolitico, cargoPostula) VALUES (?, ?, ?)";
 
@@ -58,7 +78,7 @@ public class CandidatoDAO {
         return null;
     }
 
-    public List<Candidato> listarCandidatos() {
+    public List<Candidato> obtenerCandidatos() {
         List<Candidato> candidatos = new ArrayList<>();
         String sql = "SELECT * FROM Candidato";
 

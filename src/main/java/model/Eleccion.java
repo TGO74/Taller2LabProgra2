@@ -32,6 +32,9 @@ public class Eleccion {
     public Eleccion(String nombreEleccion, java.sql.Date fechaEleccion, String lugarEleccion, String cargoElegido, String coalicionPartido, ArrayList<Object> objects) {
     }
 
+    public Eleccion(String nombre, String fecha, String lugar, String cargo, String coalicion) {
+    }
+
     //Getters y Setters
 
 
@@ -59,7 +62,7 @@ public class Eleccion {
         this.lugarEleccion = lugarEleccion;
     }
 
-    public String getCargoElegido() {
+    public CargoElegido getCargoElegido() {
         return cargoElegido;
     }
 
