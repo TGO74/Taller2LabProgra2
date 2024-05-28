@@ -73,7 +73,14 @@ public class VentanaMenu extends JFrame {
         btnRegistrarVotante.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                VentanaRegistroVotante ventanaRegistroVotante = new VentanaRegistroVotante();
+                VentanaRegistroVotante ventanaRegistroVotante = null;
+                try {
+                    ventanaRegistroVotante = new VentanaRegistroVotante();
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                } catch (ClassNotFoundException ex) {
+                    throw new RuntimeException(ex);
+                }
                 ventanaRegistroVotante.setVisible(true);
             }
         });

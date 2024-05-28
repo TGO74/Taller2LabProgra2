@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
+
 import controller.VotanteController;
 import model.Votante;
 
@@ -16,7 +18,7 @@ public class VentanaRegistroVotante extends JFrame {
     private JButton btnRegistrar;
     private VotanteController votanteController;
 
-    public VentanaRegistroVotante() {
+    public VentanaRegistroVotante() throws SQLException, ClassNotFoundException {
         votanteController = new VotanteController();
 
         setTitle("Registrar Votante");
@@ -81,7 +83,13 @@ public class VentanaRegistroVotante extends JFrame {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new VentanaRegistroVotante().setVisible(true);
+                try {
+                    new VentanaRegistroVotante().setVisible(true);
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                } catch (ClassNotFoundException e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
     }
