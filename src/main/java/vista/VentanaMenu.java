@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 public class VentanaMenu extends JFrame {
     private JPanel panelMenu;
@@ -42,7 +43,14 @@ public class VentanaMenu extends JFrame {
         btnRegistrarEleccion.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                VentanaRegistrarEleccion ventanaRegistrarEleccion = new VentanaRegistrarEleccion();
+                VentanaRegistrarEleccion ventanaRegistrarEleccion = null;
+                try {
+                    ventanaRegistrarEleccion = new VentanaRegistrarEleccion();
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                } catch (ClassNotFoundException ex) {
+                    throw new RuntimeException(ex);
+                }
                 ventanaRegistrarEleccion.setVisible(true);
             }
         });
@@ -50,7 +58,14 @@ public class VentanaMenu extends JFrame {
         btnRegistrarCandidato.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                VentanaRegistroCandidato ventanaRegistroCandidato = new VentanaRegistroCandidato();
+                VentanaRegistrarEleccion ventanaRegistroCandidato = null;
+                try {
+                    ventanaRegistroCandidato = new VentanaRegistrarEleccion();
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                } catch (ClassNotFoundException ex) {
+                    throw new RuntimeException(ex);
+                }
                 ventanaRegistroCandidato.setVisible(true);
             }
         });
@@ -63,18 +78,19 @@ public class VentanaMenu extends JFrame {
             }
         });
 
-        btnVotar.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                VentanaVotar ventanaVotar = new VentanaVotar();
-                ventanaVotar.setVisible(true);
-            }
-        });
+
 
         btnBuscarEleccion.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                VentanaBuscarEleccion ventanaBuscarEleccion = new VentanaBuscarEleccion();
+                VentanaBuscarEleccion ventanaBuscarEleccion = null;
+                try {
+                    ventanaBuscarEleccion = new VentanaBuscarEleccion();
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                } catch (ClassNotFoundException ex) {
+                    throw new RuntimeException(ex);
+                }
                 ventanaBuscarEleccion.setVisible(true);
             }
         });

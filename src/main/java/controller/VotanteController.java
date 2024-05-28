@@ -2,12 +2,14 @@ package controller;
 
 import model.Votante;
 import model.data.dao.VotanteDAO;
+
+import java.sql.SQLException;
 import java.util.List;
 
 public class VotanteController {
     private VotanteDAO votanteDAO;
 
-    public VotanteController() {
+    public VotanteController() throws SQLException, ClassNotFoundException {
         this.votanteDAO = new VotanteDAO();
     }
 

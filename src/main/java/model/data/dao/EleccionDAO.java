@@ -115,4 +115,16 @@ public class EleccionDAO {
 
 
     }
+
+    public List<Eleccion> listarElecciones() {
+
+        return null;
+    }
+
+    public boolean registrarEleccion(Eleccion eleccion) {
+
+        return false;
+
+
+    }
 }

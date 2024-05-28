@@ -2,12 +2,14 @@ package controller;
 
 import model.Candidato;
 import model.data.dao.CandidatoDAO;
+
+import java.sql.SQLException;
 import java.util.List;
 
 public class CandidatoController {
     private CandidatoDAO candidatoDAO;
 
-    public CandidatoController() {
+    public CandidatoController() throws SQLException, ClassNotFoundException {
         this.candidatoDAO = new CandidatoDAO();
     }
 
@@ -37,5 +39,10 @@ public class CandidatoController {
 
         return candidatoDAO.buscarCandidatosPorPartido(valor);
 
+    }
+
+    public void registrarCandidato(Candidato nuevoCandidato) {
+
+        candidatoDAO.agregarCandidato(nuevoCandidato);
     }
 }
