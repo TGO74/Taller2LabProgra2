@@ -53,5 +53,10 @@ Se propone implementar un sistema en Java que siga un patron de diseño MVC que 
 ### Espacio para UML
 ![Class Diagram2](https://github.com/TGO74/Taller2LabProgra2/assets/128320982/bbf48f3e-38b9-490f-b859-fcadb61cda28)
 
+**Evidencia**
+
+![image](https://github.com/TGO74/Taller2LabProgra2/assets/128320982/8532a425-89fb-4c35-b9e6-f66b60f14567)
+
+
 (Colocar aquí el diagrama UML correspondiente)
 
