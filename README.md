@@ -48,13 +48,10 @@ Se propone implementar un sistema en Java que siga un patron de diseño MVC que 
 - **controller**: Clases que gestionan y extraen los datos de la base de datos y el modelo para mostrarlo en las ventanas gráficas.
 - **principal**: Clase que inicializa el proyecto.
 
-### Packages y Clases
 
-
-  - **Métodos:**
-    - `public static void main(String[] args)`
 
 ### Espacio para UML
+![Class Diagram2](https://github.com/TGO74/Taller2LabProgra2/assets/128320982/bbf48f3e-38b9-490f-b859-fcadb61cda28)
 
 (Colocar aquí el diagrama UML correspondiente)
 
