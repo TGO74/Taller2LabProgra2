@@ -15,7 +15,7 @@ public class Candidato {
 
 
     //Constructor
-    public Candidato(){
+    public Candidato(String nombreCandidato, String partidoPolitico, String cargoPostula){
 
         this.nombreCandidato = "";
         this.rutCandidato = "";

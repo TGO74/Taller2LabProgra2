@@ -14,7 +14,7 @@ public class Eleccion {
 
     private String lugarEleccion;
 
-    private CargoElegido cargo;
+    private CargoElegido cargoElegido;
 
     private ArrayList<Candidato> candidatos;
 
@@ -24,9 +24,12 @@ public class Eleccion {
         this.nombreEleccion = "";
         this.fechaEleccion = null;
         this.lugarEleccion = "";
-        this.cargo = null;
+        this.cargoElegido = null;
         this.candidatos = new ArrayList<Candidato>();
 
+    }
+
+    public Eleccion(String nombreEleccion, java.sql.Date fechaEleccion, String lugarEleccion, String cargoElegido, String coalicionPartido, ArrayList<Object> objects) {
     }
 
     //Getters y Setters
@@ -56,12 +59,12 @@ public class Eleccion {
         this.lugarEleccion = lugarEleccion;
     }
 
-    public CargoElegido getCargo() {
-        return cargo;
+    public String getCargoElegido() {
+        return cargoElegido;
     }
 
-    public void setCargo(CargoElegido cargo) {
-        this.cargo = cargo;
+    public void setCargoElegido(CargoElegido cargo) {
+        this.cargoElegido = cargoElegido;
     }
 
     public ArrayList<Candidato> getCandidatos() {

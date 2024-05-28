@@ -21,6 +21,9 @@ public class Votante {
         this.preferenciaPolitica = "";
     }
 
+    public Votante(String rutVotante, String nombreVotante, String contactoVotante, String preferenciaPolitica) {
+    }
+
     // Getters y Setters
 
 
